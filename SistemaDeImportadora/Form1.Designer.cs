@@ -204,6 +204,7 @@
             button8.Size = new Size(34, 47);
             button8.TabIndex = 14;
             button8.UseVisualStyleBackColor = true;
+            button8.Click += button8_Click;
             // 
             // button7
             // 
@@ -364,6 +365,7 @@
             Controls.Add(panel2);
             ForeColor = Color.Black;
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Sistema de Importadora";

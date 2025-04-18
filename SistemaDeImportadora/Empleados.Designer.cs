@@ -88,6 +88,7 @@
             RegistrarVenta.TabIndex = 18;
             RegistrarVenta.Text = "Registrar Empleado";
             RegistrarVenta.UseVisualStyleBackColor = false;
+            RegistrarVenta.Click += RegistrarVenta_Click;
             // 
             // panel1
             // 

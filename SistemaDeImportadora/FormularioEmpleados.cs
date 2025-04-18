@@ -10,17 +10,21 @@ using System.Windows.Forms;
 
 namespace SistemaDeImportadora
 {
-    public partial class Empleados : UserControl
+    public partial class FormularioEmpleados : Form
     {
-        public Empleados()
+        public FormularioEmpleados()
         {
             InitializeComponent();
         }
 
-        private void RegistrarVenta_Click(object sender, EventArgs e)
+        private void FormularioEmpleados_Load(object sender, EventArgs e)
         {
-            FormularioEmpleados formularioEmpleados = new FormularioEmpleados();
-            formularioEmpleados.Show();
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

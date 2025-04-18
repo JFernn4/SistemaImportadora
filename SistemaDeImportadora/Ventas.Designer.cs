@@ -48,6 +48,7 @@
             RegistrarVenta.TabIndex = 0;
             RegistrarVenta.Text = "Registrar Venta";
             RegistrarVenta.UseVisualStyleBackColor = false;
+            RegistrarVenta.Click += RegistrarVenta_Click;
             // 
             // button1
             // 

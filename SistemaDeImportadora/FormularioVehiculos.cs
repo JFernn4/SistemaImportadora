@@ -10,19 +10,19 @@ using System.Windows.Forms;
 
 namespace SistemaDeImportadora
 {
-    public partial class FormularioVentas : Form
+    public partial class FormularioVehiculos : Form
     {
-        public FormularioVentas()
+        public FormularioVehiculos()
         {
             InitializeComponent();
         }
 
-        private void FormularioVentas_Load(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label4_Click(object sender, EventArgs e)
+        private void FormularioVehiculos_Load(object sender, EventArgs e)
         {
 
         }
@@ -32,7 +32,12 @@ namespace SistemaDeImportadora
             this.Close();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
         }

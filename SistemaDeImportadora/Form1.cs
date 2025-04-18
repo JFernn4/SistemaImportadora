@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 namespace SistemaDeImportadora
 {
     public partial class Form1 : Form
@@ -52,12 +54,17 @@ namespace SistemaDeImportadora
 
         private void button7_Click(object sender, EventArgs e)
         {
-
+            Process.Start(new ProcessStartInfo("https://www.instagram.com") { UseShellExecute = true });
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
+           Process.Start(new ProcessStartInfo("https://www.facebook.com/") { UseShellExecute = true });
+        }
 
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Process.Start(new ProcessStartInfo("https://web.whatsapp.com/") { UseShellExecute = true });
         }
     }
 }

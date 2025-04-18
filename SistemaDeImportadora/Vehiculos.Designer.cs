@@ -60,6 +60,7 @@
             RegistrarVenta.TabIndex = 22;
             RegistrarVenta.Text = "Registrar Vehículo";
             RegistrarVenta.UseVisualStyleBackColor = false;
+            RegistrarVenta.Click += RegistrarVenta_Click;
             // 
             // button1
             // 

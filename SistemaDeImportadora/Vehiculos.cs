@@ -16,5 +16,11 @@ namespace SistemaDeImportadora
         {
             InitializeComponent();
         }
+
+        private void RegistrarVenta_Click(object sender, EventArgs e)
+        {
+            FormularioVehiculos formularioVehiculos = new FormularioVehiculos();
+            formularioVehiculos.Show();
+        }
     }
 }

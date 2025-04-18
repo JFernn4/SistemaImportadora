@@ -21,5 +21,11 @@ namespace SistemaDeImportadora
         {
 
         }
+
+        private void RegistrarVenta_Click(object sender, EventArgs e)
+        {
+            FormularioVentas formularioVentas = new FormularioVentas();
+            formularioVentas.Show();
+        }
     }
 }
