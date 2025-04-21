@@ -10,27 +10,17 @@ using System.Windows.Forms;
 
 namespace SistemaDeImportadora
 {
-    public partial class Ventas : UserControl
+    public partial class Clientes : UserControl
     {
-        public Ventas()
+        public Clientes()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void RegistrarVenta_Click(object sender, EventArgs e)
         {
-            FormularioVentas formularioVentas = new FormularioVentas();
-            formularioVentas.Show();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
+            FormularioClientes formularioClientes = new FormularioClientes();
+            formularioClientes.Show();
         }
     }
 }

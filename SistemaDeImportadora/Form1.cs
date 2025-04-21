@@ -59,12 +59,24 @@ namespace SistemaDeImportadora
 
         private void button6_Click(object sender, EventArgs e)
         {
-           Process.Start(new ProcessStartInfo("https://www.facebook.com/") { UseShellExecute = true });
+            Process.Start(new ProcessStartInfo("https://www.facebook.com/") { UseShellExecute = true });
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
             Process.Start(new ProcessStartInfo("https://web.whatsapp.com/") { UseShellExecute = true });
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            SidePanel.Height = button11.Height;
+            SidePanel.Top = button11.Top;
+            clientes1.BringToFront(); 
         }
     }
 }

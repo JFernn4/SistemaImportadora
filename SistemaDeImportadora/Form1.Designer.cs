@@ -32,6 +32,7 @@
             panel2 = new Panel();
             panel3 = new Panel();
             panel1 = new Panel();
+            button11 = new Button();
             SidePanel = new Panel();
             button5 = new Button();
             button4 = new Button();
@@ -51,6 +52,7 @@
             empleados1 = new Empleados();
             vehiculos1 = new Vehiculos();
             reportes1 = new Reportes();
+            clientes1 = new Clientes();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             panel4.SuspendLayout();
@@ -79,6 +81,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(41, 39, 40);
+            panel1.Controls.Add(button11);
             panel1.Controls.Add(SidePanel);
             panel1.Controls.Add(button5);
             panel1.Controls.Add(button4);
@@ -90,6 +93,25 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(191, 532);
             panel1.TabIndex = 4;
+            panel1.Paint += panel1_Paint;
+            // 
+            // button11
+            // 
+            button11.FlatAppearance.BorderColor = Color.FromArgb(0, 0, 0, 0);
+            button11.FlatAppearance.BorderSize = 0;
+            button11.FlatStyle = FlatStyle.Flat;
+            button11.Font = new Font("Century Gothic", 11.25F);
+            button11.ForeColor = Color.White;
+            button11.Image = (Image)resources.GetObject("button11.Image");
+            button11.ImageAlign = ContentAlignment.MiddleLeft;
+            button11.ImeMode = ImeMode.NoControl;
+            button11.Location = new Point(12, 356);
+            button11.Name = "button11";
+            button11.Size = new Size(176, 52);
+            button11.TabIndex = 8;
+            button11.Text = "  Clientes";
+            button11.UseVisualStyleBackColor = true;
+            button11.Click += button11_Click;
             // 
             // SidePanel
             // 
@@ -109,7 +131,7 @@
             button5.Image = (Image)resources.GetObject("button5.Image");
             button5.ImageAlign = ContentAlignment.MiddleLeft;
             button5.ImeMode = ImeMode.NoControl;
-            button5.Location = new Point(12, 308);
+            button5.Location = new Point(12, 300);
             button5.Name = "button5";
             button5.Size = new Size(176, 52);
             button5.TabIndex = 7;
@@ -127,11 +149,11 @@
             button4.Image = (Image)resources.GetObject("button4.Image");
             button4.ImageAlign = ContentAlignment.MiddleLeft;
             button4.ImeMode = ImeMode.NoControl;
-            button4.Location = new Point(12, 250);
+            button4.Location = new Point(12, 244);
             button4.Name = "button4";
             button4.Size = new Size(176, 52);
             button4.TabIndex = 6;
-            button4.Text = "  Vehícuos";
+            button4.Text = "  Vehículos";
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
             // 
@@ -145,7 +167,7 @@
             button3.Image = (Image)resources.GetObject("button3.Image");
             button3.ImageAlign = ContentAlignment.MiddleLeft;
             button3.ImeMode = ImeMode.NoControl;
-            button3.Location = new Point(12, 192);
+            button3.Location = new Point(12, 188);
             button3.Name = "button3";
             button3.Size = new Size(176, 52);
             button3.TabIndex = 5;
@@ -163,7 +185,7 @@
             button2.Image = (Image)resources.GetObject("button2.Image");
             button2.ImageAlign = ContentAlignment.MiddleLeft;
             button2.ImeMode = ImeMode.NoControl;
-            button2.Location = new Point(12, 134);
+            button2.Location = new Point(12, 132);
             button2.Name = "button2";
             button2.Size = new Size(176, 52);
             button2.TabIndex = 4;
@@ -345,11 +367,19 @@
             reportes1.Size = new Size(853, 389);
             reportes1.TabIndex = 22;
             // 
+            // clientes1
+            // 
+            clientes1.Location = new Point(191, 154);
+            clientes1.Name = "clientes1";
+            clientes1.Size = new Size(853, 389);
+            clientes1.TabIndex = 23;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1043, 542);
+            Controls.Add(clientes1);
             Controls.Add(reportes1);
             Controls.Add(vehiculos1);
             Controls.Add(empleados1);
@@ -402,5 +432,7 @@
         private Empleados empleados1;
         private Vehiculos vehiculos1;
         private Reportes reportes1;
+        private Button button11;
+        private Clientes clientes1;
     }
 }
