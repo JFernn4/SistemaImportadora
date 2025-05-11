@@ -12,10 +12,11 @@ namespace SistemaDeImportadora
 {
     public partial class FormularioEmpleados : Form
     {
-        Datos_Empleado datosempleado = new Datos_Empleado();
-        public FormularioEmpleados()
+        private Datos_Empleado datosempleado = new Datos_Empleado();
+        public FormularioEmpleados(Datos_Empleado datosempleado)
         {
             InitializeComponent();
+            this.datosempleado = datosempleado;
         }
 
         private void FormularioEmpleados_Load(object sender, EventArgs e)
@@ -30,7 +31,35 @@ namespace SistemaDeImportadora
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Guardar();
+            try
+            {
+                if (string.IsNullOrEmpty(textBox1.Text) || string.IsNullOrEmpty(textBox2.Text) || string.IsNullOrEmpty(textBox3.Text) || string.IsNullOrEmpty(textBox4.Text) || string.IsNullOrEmpty(textBox5.Text) || string.IsNullOrEmpty(comboBox2.Text))
+                {
+                    MessageBox.Show("Complete todos los datos");
+                    return;
+                }
+                if (!int.TryParse(textBox2.Text, out int id1))
+                {
+                    MessageBox.Show("Ingrese un ID valido");
+                    return;
+                }
+                if (!double.TryParse(textBox4.Text, out double salario))
+                {
+                    MessageBox.Show("Ingrese un salario valido");
+                    return;
+                }
+                Guardar();
+                MessageBox.Show("Datos Guardados");
+                this.Close();
+            }
+            catch (FormatException ex)
+            {
+                MessageBox.Show("Error al guardar los datos, intente nuevamente");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error inesperado: " + ex.Message);
+            }
         }
         public void Guardar()
         {
@@ -41,9 +70,23 @@ namespace SistemaDeImportadora
                 Telefono = textBox5.Text,
                 Cargo = comboBox2.Text,
                 Correo = textBox3.Text,
-                Salario = double.Parse(maskedTextBox1.Text)
+                Salario = double.Parse(textBox4.Text)
             };
             datosempleado.Guardar(r_Empleado);
+        }
+        public void Limpiar()
+        {
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+            textBox4.Clear();
+            textBox5.Clear();
+            comboBox2.Text = "";
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            Limpiar();
         }
     }
 }

@@ -52,6 +52,8 @@
             comboBox4 = new ComboBox();
             comboBox5 = new ComboBox();
             textBox1 = new TextBox();
+            btnLimpiar = new Button();
+            monthCalendar1 = new MonthCalendar();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
@@ -243,6 +245,7 @@
             textBox7.Name = "textBox7";
             textBox7.Size = new Size(481, 32);
             textBox7.TabIndex = 68;
+            textBox7.Click += textBox7_Click;
             // 
             // label9
             // 
@@ -319,11 +322,31 @@
             textBox1.Size = new Size(587, 27);
             textBox1.TabIndex = 76;
             // 
+            // btnLimpiar
+            // 
+            btnLimpiar.Location = new Point(61, 584);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.Size = new Size(94, 29);
+            btnLimpiar.TabIndex = 77;
+            btnLimpiar.Text = "Limpiar";
+            btnLimpiar.UseVisualStyleBackColor = true;
+            btnLimpiar.Click += btnLimpiar_Click;
+            // 
+            // monthCalendar1
+            // 
+            monthCalendar1.Location = new Point(290, 392);
+            monthCalendar1.Name = "monthCalendar1";
+            monthCalendar1.TabIndex = 78;
+            monthCalendar1.DateChanged += monthCalendar1_DateChanged;
+            monthCalendar1.DateSelected += monthCalendar1_DateSelected;
+            // 
             // FormularioVentas
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(833, 673);
+            Controls.Add(monthCalendar1);
+            Controls.Add(btnLimpiar);
             Controls.Add(textBox1);
             Controls.Add(comboBox5);
             Controls.Add(comboBox4);
@@ -384,5 +407,7 @@
         private ComboBox comboBox4;
         private ComboBox comboBox5;
         private TextBox textBox1;
+        private Button btnLimpiar;
+        private MonthCalendar monthCalendar1;
     }
 }

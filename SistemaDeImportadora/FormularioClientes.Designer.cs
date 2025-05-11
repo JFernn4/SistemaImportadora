@@ -44,6 +44,7 @@
             bindingSource1 = new BindingSource(components);
             textBox2 = new TextBox();
             maskedTextBox1 = new MaskedTextBox();
+            btnLimpiar = new Button();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             SuspendLayout();
@@ -209,11 +210,22 @@
             maskedTextBox1.Size = new Size(244, 27);
             maskedTextBox1.TabIndex = 120;
             // 
+            // btnLimpiar
+            // 
+            btnLimpiar.Location = new Point(57, 348);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.Size = new Size(94, 29);
+            btnLimpiar.TabIndex = 121;
+            btnLimpiar.Text = "Limpiar";
+            btnLimpiar.UseVisualStyleBackColor = true;
+            btnLimpiar.Click += button3_Click;
+            // 
             // FormularioClientes
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(833, 460);
+            Controls.Add(btnLimpiar);
             Controls.Add(maskedTextBox1);
             Controls.Add(textBox2);
             Controls.Add(button1);
@@ -255,5 +267,6 @@
         private BindingSource bindingSource1;
         private TextBox textBox2;
         private MaskedTextBox maskedTextBox1;
+        private Button btnLimpiar;
     }
 }

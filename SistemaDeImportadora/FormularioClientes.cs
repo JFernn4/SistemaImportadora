@@ -12,10 +12,11 @@ namespace SistemaDeImportadora
 {
     public partial class FormularioClientes : Form
     {
-        Datos_Cliente datoscliente = new Datos_Cliente();
-        public FormularioClientes()
+        private Datos_Cliente datoscliente;
+        public FormularioClientes(Datos_Cliente datoscliente)
         {
             InitializeComponent();
+            this.datoscliente = datoscliente;
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -35,7 +36,31 @@ namespace SistemaDeImportadora
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Guardar();
+            try
+            {
+                if (string.IsNullOrEmpty(textBox1.Text) || string.IsNullOrEmpty(maskedTextBox1.Text) || string.IsNullOrEmpty(textBox3.Text) || string.IsNullOrEmpty(textBox2.Text))
+                {
+                    MessageBox.Show("Complete todos los datos");
+                    return;
+                }
+                if (!int.TryParse(textBox2.Text, out int id1))
+                {
+                    MessageBox.Show("Ingrese un ID valido");
+                    return;
+                }
+
+                Guardar();
+                MessageBox.Show("Datos Guardados");
+                this.Close();
+            }
+            catch (FormatException ex)
+            {
+                MessageBox.Show("Error al guardar los datos, intente nuevamente");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error inesperado: " + ex.Message);
+            }
         }
         private void Guardar()
         {
@@ -48,12 +73,17 @@ namespace SistemaDeImportadora
             };
             datoscliente.GuardarC(cliente);
         }
-        private void Cancelar()
+        private void Limpiar()
         {
             textBox2.Text = "";
             textBox1.Text = "";
             maskedTextBox1.Text = "";
             textBox3.Text = "";
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Limpiar();
         }
     }
 }

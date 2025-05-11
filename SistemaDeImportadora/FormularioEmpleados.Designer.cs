@@ -46,7 +46,8 @@
             button2 = new Button();
             comboBox2 = new ComboBox();
             textBox2 = new TextBox();
-            maskedTextBox1 = new MaskedTextBox();
+            textBox4 = new TextBox();
+            btnLimpiar = new Button();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
@@ -111,7 +112,7 @@
             // 
             textBox5.Cursor = Cursors.IBeam;
             textBox5.Font = new Font("Century Gothic", 12F);
-            textBox5.Location = new Point(147, 257);
+            textBox5.Location = new Point(147, 259);
             textBox5.Margin = new Padding(3, 4, 3, 4);
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(253, 32);
@@ -243,6 +244,7 @@
             // comboBox2
             // 
             comboBox2.FormattingEnabled = true;
+            comboBox2.Items.AddRange(new object[] { "Gerente", "Secretaria", "Vendedor", "Operador" });
             comboBox2.Location = new Point(131, 317);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(269, 28);
@@ -255,20 +257,30 @@
             textBox2.Size = new Size(524, 27);
             textBox2.TabIndex = 119;
             // 
-            // maskedTextBox1
+            // textBox4
             // 
-            maskedTextBox1.Location = new Point(519, 318);
-            maskedTextBox1.Mask = "Q";
-            maskedTextBox1.Name = "maskedTextBox1";
-            maskedTextBox1.Size = new Size(254, 27);
-            maskedTextBox1.TabIndex = 120;
+            textBox4.Location = new Point(520, 316);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(253, 27);
+            textBox4.TabIndex = 120;
+            // 
+            // btnLimpiar
+            // 
+            btnLimpiar.Location = new Point(69, 416);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.Size = new Size(94, 29);
+            btnLimpiar.TabIndex = 121;
+            btnLimpiar.Text = "Limpiar";
+            btnLimpiar.UseVisualStyleBackColor = true;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
             // FormularioEmpleados
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(833, 499);
-            Controls.Add(maskedTextBox1);
+            Controls.Add(btnLimpiar);
+            Controls.Add(textBox4);
             Controls.Add(textBox2);
             Controls.Add(comboBox2);
             Controls.Add(button1);
@@ -317,6 +329,7 @@
         private Button button2;
         private ComboBox comboBox2;
         private TextBox textBox2;
-        private MaskedTextBox maskedTextBox1;
+        private TextBox textBox4;
+        private Button btnLimpiar;
     }
 }
